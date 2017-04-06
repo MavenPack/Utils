@@ -13,7 +13,35 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
+		<jdk.classifier></jdk.classifier>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>jdk18</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<jdk.version>1.8</jdk.version>
+				<jdk.classifier></jdk.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk16</id>
+			<properties>
+				<jdk.version>1.6</jdk.version>
+				<jdk.classifier>${jdk.version}</jdk.classifier>
+			</properties>
+		</profile>
+		<profile>
+			<id>jdk17</id>
+			<properties>
+				<jdk.version>1.7</jdk.version>
+				<jdk.classifier>${jdk.version}</jdk.classifier>
+			</properties>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
@@ -39,6 +67,14 @@
 					<configuration>
 						<source>${jdk.version}</source>
 						<target>${jdk.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+					<configuration>
+						<classifier>${jdk.classifier}</classifier>
 					</configuration>
 				</plugin>
 				<plugin>

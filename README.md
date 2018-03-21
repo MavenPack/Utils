@@ -2,28 +2,28 @@
 
 gradle:
 ```
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 
-	dependencies {
-		compile 'com.github.MavenPack:Utils:0.1'
-	}
+dependencies {
+	compile 'com.github.MavenPack:Utils:0.1'
+}
 ```
 
 Maven:
 ```
-	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
 
-	<dependency>
-	    <groupId>com.github.MavenPack</groupId>
-	    <artifactId>Utils</artifactId>
-	    <version>0.1</version>
-	</dependency>
+<dependency>
+    <groupId>com.github.MavenPack</groupId>
+    <artifactId>Utils</artifactId>
+    <version>0.1</version>
+</dependency>
 ```
